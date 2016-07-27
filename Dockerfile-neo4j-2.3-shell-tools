@@ -7,3 +7,8 @@ MAINTAINER pkremer@spurious.biz
 RUN curl http://dist.neo4j.org/jexp/shell/neo4j-shell-tools_2.3.3.zip -o neo4j-shell-tools.zip && \
 	unzip -o neo4j-shell-tools.zip -d lib && \
 	rm neo4j-shell-tools.zip
+
+COPY initneo4j.sh /initneo4j.sh
+
+ENTRYPOINT ["/initneo4j.sh"]
+CMD ["neo4j"]
