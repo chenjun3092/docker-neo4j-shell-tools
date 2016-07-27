@@ -14,6 +14,10 @@ then
         do
         	./bin/neo4j-shell -path data/graph.db -c "import-graphml -i ${f} -t"
         done
+        for f in /initneo4j/*.binary;
+        do
+        	./bin/neo4j-shell -path data/graph.db -c "import-binary -i ${f} -t"
+        done
     fi
 fi
 exec /docker-entrypoint.sh $@
