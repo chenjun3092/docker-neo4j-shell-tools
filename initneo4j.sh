@@ -16,7 +16,7 @@ then
         done
         for f in /initneo4j/*.binary;
         do
-        	./bin/neo4j-shell -path data/graph.db -c "import-binary -i ${f} -t"
+            ./bin/neo4j-shell -path data/graph.db -c "import-binary -i ${f} -c"
         done
     fi
 fi
