@@ -10,6 +10,11 @@ then
     if [ -d /initneo4j/ ];
     then
         shopt -s nullglob
+        for f in /initneo4j/*.sh;
+        do
+                chmod +x "$f"
+                "$f"
+        done
         for f in /initneo4j/*.graphml;
         do
         	./bin/neo4j-shell -path data/graph.db -c "import-graphml -i ${f} -t"
